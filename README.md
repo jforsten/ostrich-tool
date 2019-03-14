@@ -1,5 +1,7 @@
 # ostrich-tool
 
+(NOTE: "serialport" is defined in index.html as webpack will otherwise mess up things) - actually solved differently 
+
 ## Project setup
 ```
 yarn install
