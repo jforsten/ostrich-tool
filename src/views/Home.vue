@@ -1,13 +1,13 @@
 <template>
-  <HelloWorld />
+  <Serial />
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+  import Serial from '../components/Serial'
 
   export default {
     components: {
-      HelloWorld
+      Serial
     }
   }
 </script>

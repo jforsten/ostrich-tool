@@ -2,8 +2,8 @@
   <v-app>
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
+        <span>Ostrich</span>
+        <span class="font-weight-light">TOOL</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
@@ -16,18 +16,18 @@
     </v-toolbar>
 
     <v-content>
-      <HelloWorld/>
+      <Serial/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Serial from './components/Serial'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Serial
   },
   data () {
     return {
