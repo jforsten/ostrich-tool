@@ -3,12 +3,20 @@
 const SerialPort = require("electron").remote.require("serialport");
 
 export const DataSource = {
-  listPorts() {
-    SerialPort.list(function(err, ports) {
-      ports.forEach(function(port) {
-        console.log(port.comName);
+  getPorts() {
+    return new Promise((resolve, reject) => {
+      SerialPort.list(function(err, ports) {
+        if (err) reject(err);
+        resolve(ports);
       });
     });
+  },
+  listPorts() {
+    this.getPorts().then(ports =>
+      ports.forEach(port =>
+        console.log(port.comName + " / " + port.manufacturer)
+      )
+    );
   },
   write(data, portname) {
     return new Promise((resolve, reject) => {
@@ -36,7 +44,9 @@ export const DataSource = {
         reject(error);
       });
       */
-      port.write(data);
+      port.write(data, function(err) {
+        if (err) reject(err);
+      });
     });
   },
   getVersion(portname) {
